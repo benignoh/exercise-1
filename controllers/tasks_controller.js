@@ -17,7 +17,7 @@ function validToken(token) {
 
 function validHeaderToken(req) {
   let auth = req.get('Authorization') || '',
-    token = auth.replace(/\s+/g, '').split('bearer').slice(-1)[0];
+    token = auth.replace(/\s+/g, '').split('Bearer').slice(-1)[0];
   return `${token}`.length > 0 && validToken(token);
 }
 
